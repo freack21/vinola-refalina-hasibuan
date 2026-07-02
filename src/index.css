@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-background: var(--brand-background);
+  --color-brand-text: var(--brand-text);
+  --color-brand-text-light: var(--brand-text-light);
+}
+
+:root {
+  /* Edit these colors to change the entire theme */
+  --brand-primary: #4B544A;     /* Dark Forest */
+  --brand-secondary: #f5f1eb;   /* Light warm cream */
+  --brand-accent: #c4a97f;      /* Muted gold / sand */
+  --brand-background: #ffffff;  /* White */
+  --brand-text: #2d3a2e;        /* Dark green/gray text */
+  --brand-text-light: #6a7469;  /* Lighter text */
+}
+
+@layer base {
+  body {
+    @apply font-inter bg-brand-background text-brand-text antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat tracking-tight;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Micro-animations */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
