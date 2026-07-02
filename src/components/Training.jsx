@@ -72,9 +72,9 @@ const Training = () => {
                   </div>
                   <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
                     {training.gallery.map((imgUrl, i) => (
-                      <div key={i} className="relative group overflow-hidden rounded-lg min-w-[140px] h-28 border border-gray-200 snap-center flex-shrink-0">
+                      <div key={i} className="relative group overflow-hidden rounded-lg min-w-[140px] h-28 border border-gray-200 snap-center flex-shrink-0 cursor-zoom-in">
                         <img src={imgUrl} alt={`Dokumentasi ${training.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                       </div>
                     ))}
                   </div>

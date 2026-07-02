@@ -120,9 +120,9 @@ const Experience = () => {
                       </div>
                       <div className="flex flex-wrap gap-3">
                         {exp.gallery.map((imgUrl, i) => (
-                          <div key={i} className="relative group overflow-hidden rounded-lg w-32 h-24 border border-gray-200">
+                          <div key={i} className="relative group overflow-hidden rounded-lg w-32 h-24 border border-gray-200 cursor-zoom-in">
                             <img src={imgUrl} alt={`Dokumentasi ${exp.role}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                            <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                           </div>
                         ))}
                       </div>
