@@ -34,7 +34,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--brand-secondary);
+  overflow-y: overlay; /* Allows scrollbar to float on top of content in Webkit browsers */
 }
 
 /* Micro-animations */
