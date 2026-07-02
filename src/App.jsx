@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Training from './components/Training';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomScrollbar from './components/CustomScrollbar';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <CustomScrollbar />
     </div>
   )
 }
