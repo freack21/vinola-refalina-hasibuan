@@ -4,12 +4,16 @@ import fs from 'fs';
 import path from 'path';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'vinola123';
 const DATA_FILE = path.join(__dirname, 'data.json');
 
 // Middleware
@@ -55,7 +59,7 @@ app.post('/api/data', (req, res) => {
     // Password validation (simple static password for CMS)
     const { _adminPassword, ...dataToSave } = newData;
     
-    if (_adminPassword !== 'vinola123') { // Simple hardcoded password
+    if (_adminPassword !== ADMIN_PASSWORD) { // Password check
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
@@ -67,11 +71,20 @@ app.post('/api/data', (req, res) => {
   }
 });
 
+// API: Verify Password
+app.post('/api/verify-password', (req, res) => {
+  if (req.body.password === ADMIN_PASSWORD) {
+    res.json({ success: true });
+  } else {
+    res.status(401).json({ error: 'Unauthorized' });
+  }
+});
+
 // API: Upload Image
 app.post('/api/upload', upload.single('image'), (req, res) => {
   try {
     // password check
-    if (req.body.password !== 'vinola123') {
+    if (req.body.password !== ADMIN_PASSWORD) {
        // Need to delete uploaded file if unauthorized
        if(req.file) {
          fs.unlinkSync(req.file.path);

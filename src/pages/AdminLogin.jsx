@@ -12,13 +12,23 @@ const AdminLogin = () => {
     }
   }, [navigate]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password === 'vinola123') { // Simple static password
-      localStorage.setItem('adminPassword', password);
-      navigate('/admin');
-    } else {
-      setError('Password salah!');
+    try {
+      const response = await fetch('/api/verify-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password })
+      });
+      
+      if (response.ok) {
+        localStorage.setItem('adminPassword', password);
+        navigate('/admin');
+      } else {
+        setError('Password salah!');
+      }
+    } catch (err) {
+      setError('Gagal menghubungi server.');
     }
   };
 
