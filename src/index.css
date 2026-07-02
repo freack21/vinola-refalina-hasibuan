@@ -34,6 +34,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--brand-secondary);
 }
 
 /* Micro-animations */
@@ -48,16 +49,16 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--brand-background);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--brand-primary);
-  border-radius: 0;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
