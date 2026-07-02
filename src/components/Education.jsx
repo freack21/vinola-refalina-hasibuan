@@ -15,13 +15,20 @@ const Education = () => {
           <GraduationCap className="absolute -top-10 -right-10 w-64 h-64 text-brand-secondary opacity-50" strokeWidth={1} />
           
           <div className="relative z-10 flex flex-col md:flex-row gap-8 justify-between items-start">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <GraduationCap className="text-brand-accent" size={28} />
-                <h3 className="text-2xl font-bold text-brand-text">Universitas Riau</h3>
+            <div className="flex gap-6 items-center">
+              <div className="hidden md:flex items-center justify-center bg-white p-2 rounded-full shadow-md w-24 h-24 flex-shrink-0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png" alt="Logo UNRI" className="w-full h-full object-contain drop-shadow-sm" />
               </div>
-              <p className="text-xl text-brand-primary font-medium mb-1">S1 Akuntansi</p>
-              <p className="text-brand-text-light">2022 - 2026</p>
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="md:hidden bg-white p-1 rounded-full shadow-sm w-10 h-10 flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png" alt="Logo UNRI" className="w-8 h-8 object-contain" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-brand-text">Universitas Riau</h3>
+                </div>
+                <p className="text-xl text-brand-primary font-medium mb-1">S1 Akuntansi</p>
+                <p className="text-brand-text-light">2022 - 2026</p>
+              </div>
             </div>
             
             <div className="bg-brand-secondary px-6 py-4 rounded-xl border border-brand-accent/20 text-center min-w-[150px]">
