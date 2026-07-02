@@ -11,11 +11,7 @@ const Hero = ({ data }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
-        <div className="space-y-8 fade-in">
-          <div className="inline-block px-4 py-2 bg-brand-primary/10 rounded-full border border-brand-primary/20">
-            <p className="text-brand-primary font-medium tracking-wider text-sm uppercase">Portofolio Profesional</p>
-          </div>
-          
+        <div className="space-y-8 fade-in py-8">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-brand-text">
             {data.title1} <br />
             <span className="text-brand-primary">{data.title2}</span>

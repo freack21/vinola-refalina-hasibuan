@@ -2,11 +2,12 @@
   "hero": {
     "title1": "Vinola",
     "title2": "Refalina Hasibuan",
-    "subtitle": "I am a fresh graduate who is highly enthusiastic about developing a career in the professional world. Fast learner, easy to adapt, and ready to face new challenges."
+    "subtitle": "I am a fresh graduate who is highly enthusiastic about developing a career in the professional world. Fast learner, easy to adapt, and ready to face new challenges.",
+    "image": "/images/image-1782996549853-198866784.jpg"
   },
   "about": {
     "text": "<p>Halo, saya Vinola Refalina Hasibuan, seorang <strong>Fresh Graduate S1 Akuntansi</strong> dari Universitas Riau yang memiliki gairah mendalam di bidang <strong>Finance, Accounting, dan Tax</strong>.</p><p>Dengan bekal pengetahuan akademis yang kuat dan pengalaman praktis selama magang, saya terlatih dalam mengelola administrasi keuangan, rekonsiliasi data, serta menangani faktur pajak dengan tingkat akurasi yang tinggi.</p><p>Saya adalah individu yang teliti, analitis, dan cepat beradaptasi. Saya percaya bahwa pengelolaan data keuangan yang presisi adalah kunci dari pertumbuhan strategis sebuah perusahaan. Saya siap membawa kemampuan <em>problem-solving</em> dan dedikasi saya untuk memberikan dampak positif di tempat saya bekerja.</p>",
-    "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop"
+    "image": "/images/image-1782996549853-198866784.jpg"
   },
   "education": {
     "institution": "Universitas Riau",
@@ -14,8 +15,13 @@
     "period": "2022 - 2026",
     "gpa": "3.80",
     "maxGpa": "4.00",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png",
-    "courses": ["Praktek Penyusunan Laporan Keuangan", "Analisis Laporan Keuangan", "Praktek Perpajakan", "PPN"]
+    "logo": "https://upload.wikimedia.org/wikipedia/id/thumb/f/f8/Logo_Universitas_Riau.svg/250px-Logo_Universitas_Riau.svg.png",
+    "courses": [
+      "Praktek Penyusunan Laporan Keuangan",
+      "Analisis Laporan Keuangan",
+      "Praktek Perpajakan",
+      "PPN"
+    ]
   },
   "experience": [
     {
@@ -85,19 +91,52 @@
   ],
   "skills": {
     "technical": [
-      { "name": "Microsoft Office", "iconName": "FileText" },
-      { "name": "Fungsi Lanjutan Excel", "iconName": "FileSpreadsheet" },
-      { "name": "Google Workspace", "iconName": "MonitorCheck" },
-      { "name": "Accurate Software", "iconName": "Calculator" },
-      { "name": "Sistem Coretax DJP", "iconName": "CheckSquare" },
-      { "name": "Canva Design", "iconName": "LayoutTemplate" }
+      {
+        "name": "Microsoft Office",
+        "iconName": "FileText"
+      },
+      {
+        "name": "Fungsi Lanjutan Excel",
+        "iconName": "FileSpreadsheet"
+      },
+      {
+        "name": "Google Workspace",
+        "iconName": "MonitorCheck"
+      },
+      {
+        "name": "Accurate Software",
+        "iconName": "Calculator"
+      },
+      {
+        "name": "Sistem Coretax DJP",
+        "iconName": "CheckSquare"
+      },
+      {
+        "name": "Canva Design",
+        "iconName": "LayoutTemplate"
+      }
     ],
     "soft": [
-      { "name": "Manajemen Waktu", "iconName": "Clock" },
-      { "name": "Teliti & Analitis", "iconName": "Search" },
-      { "name": "Problem Solving", "iconName": "Lightbulb" },
-      { "name": "Kerjasama Tim", "iconName": "Users" },
-      { "name": "Komunikasi", "iconName": "MessageSquare" }
+      {
+        "name": "Manajemen Waktu",
+        "iconName": "Clock"
+      },
+      {
+        "name": "Teliti & Analitis",
+        "iconName": "Search"
+      },
+      {
+        "name": "Problem Solving",
+        "iconName": "Lightbulb"
+      },
+      {
+        "name": "Kerjasama Tim",
+        "iconName": "Users"
+      },
+      {
+        "name": "Komunikasi",
+        "iconName": "MessageSquare"
+      }
     ]
   },
   "training": [
@@ -122,7 +161,7 @@
       ],
       "gallery": [
         "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=500&q=80",
-        "https://images.unsplash.com/photo-1450101499163-c8848c66cb85?w=500&q=80"
+        "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=500&q=80"
       ]
     }
   ],
