@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import { Award, ImageIcon } from 'lucide-react';
+import ImageModal from './ImageModal';
 
 const Training = ({ data }) => {
+  const [modalImage, setModalImage] = useState(null);
+
   if (!data) return null;
 
   return (
@@ -45,9 +49,13 @@ const Training = ({ data }) => {
                     <ImageIcon size={16} className="text-brand-accent" />
                     Sertifikat / Dokumentasi
                   </div>
-                  <div className="flex gap-3 overflow-x-auto pb-2 snap-x custom-scrollbar">
+                  <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory">
                     {training.gallery.map((imgUrl, i) => (
-                      <div key={i} className="relative group overflow-hidden rounded-lg min-w-[140px] h-28 border border-gray-200 snap-center flex-shrink-0 cursor-zoom-in">
+                      <div 
+                        key={i} 
+                        onClick={() => setModalImage(imgUrl)}
+                        className="relative group overflow-hidden rounded-xl min-w-[180px] md:min-w-[200px] h-40 md:h-44 border border-gray-100 shadow-sm snap-center flex-shrink-0 cursor-zoom-in"
+                      >
                         <img src={imgUrl} alt={`Dokumentasi ${training.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                       </div>
@@ -60,6 +68,12 @@ const Training = ({ data }) => {
         </div>
 
       </div>
+
+      <ImageModal 
+        isOpen={!!modalImage} 
+        imageUrl={modalImage} 
+        onClose={() => setModalImage(null)} 
+      />
     </section>
   );
 };

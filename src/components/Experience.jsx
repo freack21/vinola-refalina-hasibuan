@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { Briefcase, Users, ImageIcon } from 'lucide-react';
+import ImageModal from './ImageModal';
 
 const IconMap = { Briefcase, Users };
 
 const Experience = ({ data }) => {
+  const [modalImage, setModalImage] = useState(null);
+
   if (!data) return null;
 
   return (
@@ -58,9 +62,13 @@ const Experience = ({ data }) => {
                         <ImageIcon size={16} className="text-brand-accent" />
                         Galeri
                       </div>
-                      <div className="flex gap-2 overflow-x-auto pb-2 snap-x custom-scrollbar">
+                      <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory">
                         {exp.gallery.map((imgUrl, i) => (
-                          <div key={i} className="relative group/img overflow-hidden rounded-lg min-w-[120px] h-24 border border-gray-200 snap-center flex-shrink-0 cursor-zoom-in">
+                          <div 
+                            key={i} 
+                            onClick={() => setModalImage(imgUrl)}
+                            className="relative group/img overflow-hidden rounded-xl min-w-[160px] md:min-w-[180px] h-32 md:h-36 border border-gray-100 shadow-sm snap-center flex-shrink-0 cursor-zoom-in"
+                          >
                             <img src={imgUrl} alt={`Dokumentasi ${exp.company}`} className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110" />
                             <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover/img:opacity-100 transition-opacity pointer-events-none"></div>
                           </div>
@@ -76,6 +84,12 @@ const Experience = ({ data }) => {
 
         </div>
       </div>
+      
+      <ImageModal 
+        isOpen={!!modalImage} 
+        imageUrl={modalImage} 
+        onClose={() => setModalImage(null)} 
+      />
     </section>
   );
 };
