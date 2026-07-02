@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "title1": "Vinola",
+    "title2": "Refalina Hasibuan",
+    "subtitle": "I am a fresh graduate who is highly enthusiastic about developing a career in the professional world. Fast learner, easy to adapt, and ready to face new challenges."
+  },
+  "about": {
+    "text": "<p>Halo, saya Vinola Refalina Hasibuan, seorang <strong>Fresh Graduate S1 Akuntansi</strong> dari Universitas Riau yang memiliki gairah mendalam di bidang <strong>Finance, Accounting, dan Tax</strong>.</p><p>Dengan bekal pengetahuan akademis yang kuat dan pengalaman praktis selama magang, saya terlatih dalam mengelola administrasi keuangan, rekonsiliasi data, serta menangani faktur pajak dengan tingkat akurasi yang tinggi.</p><p>Saya adalah individu yang teliti, analitis, dan cepat beradaptasi. Saya percaya bahwa pengelolaan data keuangan yang presisi adalah kunci dari pertumbuhan strategis sebuah perusahaan. Saya siap membawa kemampuan <em>problem-solving</em> dan dedikasi saya untuk memberikan dampak positif di tempat saya bekerja.</p>",
+    "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop"
+  },
+  "education": {
+    "institution": "Universitas Riau",
+    "degree": "S1 Akuntansi",
+    "period": "2022 - 2026",
+    "gpa": "3.80",
+    "maxGpa": "4.00",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png",
+    "courses": ["Praktek Penyusunan Laporan Keuangan", "Analisis Laporan Keuangan", "Praktek Perpajakan", "PPN"]
+  },
+  "experience": [
+    {
+      "type": "Magang",
+      "iconName": "Briefcase",
+      "company": "PT. Perkebunan Nusantara IV Regional III (PTPN IV Reg III)",
+      "role": "Akuntansi dan Keuangan",
+      "date": "Juli - Agustus 2025",
+      "points": [
+        "Mengidentifikasi kesesuaian antara faktur pajak dengan dokumen pendukung vendor, serta membuat surat tanda terima dokumen untuk mendukung kelengkapan administrasi.",
+        "Memproses dan menyelesaikan 20–30 faktur pajak masukan per hari untuk diteruskan ke divisi kas sebagai dasar proses pembayaran vendor.",
+        "Melakukan pengarsipan dokumen perpajakan bulanan dengan 50+ vendor, untuk memastikan dokumen tersusun secara sistematis dan mudah ditelusuri.",
+        "Melakukan input dan pembaruan data vendor yang telah diproses ke dalam sistem perusahaan."
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80",
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&q=80"
+      ]
+    },
+    {
+      "type": "Kepanitiaan",
+      "iconName": "Users",
+      "company": "FEB EXPO",
+      "role": "Divisi Pendanaan",
+      "date": "Oktober 2024",
+      "points": [
+        "Membantu penyusunan anggaran kegiatan.",
+        "Berkoordinasi dengan sponsor, dan pihak terkait dalam proses penggalangan dana serta tindak lanjut kerjasama.",
+        "Menyusun dan mengarsipkan dokumen administrasi pendanaan, termasuk proposal, bukti transaksi, dan laporan penggunaan dana."
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&q=80",
+        "https://images.unsplash.com/photo-1515169067868-5387ec356754?w=500&q=80"
+      ]
+    },
+    {
+      "type": "Kepanitiaan",
+      "iconName": "Users",
+      "company": "Sumatera Accounting Competition",
+      "role": "Divisi Acara",
+      "date": "Oktober 2024",
+      "points": [
+        "Menyusun konsep susunan acara sesuai dengan tujuan kegiatan.",
+        "Mengatur jadwal rundown kegiatan serta memastikan setiap sesi berjalan sesuai waktu yang ditentukan.",
+        "Berkoordinasi dengan seluruh panitia, narasumber dan peserta untuk memastikan kelancaran pelaksanaan acara."
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=500&q=80"
+      ]
+    },
+    {
+      "type": "Kepanitiaan",
+      "iconName": "Users",
+      "company": "Latihan Dasar Kepemimpinan",
+      "role": "Divisi Publikasi",
+      "date": "September 2023",
+      "points": [
+        "Mensosialisasikan program Latihan Dasar Kepemimpinan kepada mahasiswa baru akuntansi dan berhasil mencapai target partisipasi dengan 200+ peserta.",
+        "Memberikan informasi, arahan, dan pendampingan kepada peserta selama kegiatan berlangsung.",
+        "Membangun komunikasi dan koordinasi dengan divisi acara untuk memastikan seluruh rangkaian kegiatan berjalan sesuai jadwal."
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500&q=80",
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80"
+      ]
+    }
+  ],
+  "skills": {
+    "technical": [
+      { "name": "Microsoft Office", "iconName": "FileText" },
+      { "name": "Fungsi Lanjutan Excel", "iconName": "FileSpreadsheet" },
+      { "name": "Google Workspace", "iconName": "MonitorCheck" },
+      { "name": "Accurate Software", "iconName": "Calculator" },
+      { "name": "Sistem Coretax DJP", "iconName": "CheckSquare" },
+      { "name": "Canva Design", "iconName": "LayoutTemplate" }
+    ],
+    "soft": [
+      { "name": "Manajemen Waktu", "iconName": "Clock" },
+      { "name": "Teliti & Analitis", "iconName": "Search" },
+      { "name": "Problem Solving", "iconName": "Lightbulb" },
+      { "name": "Kerjasama Tim", "iconName": "Users" },
+      { "name": "Komunikasi", "iconName": "MessageSquare" }
+    ]
+  },
+  "training": [
+    {
+      "title": "Short Class My Skill",
+      "date": "April 2025",
+      "points": [
+        "Menguasai dasar pengolahan data pada Microsoft Excel menggunakan fungsi HLOOKUP, VLOOKUP, dan INDEX-MATCH.",
+        "Mengolah dan menganalisis data dengan fungsi lookup untuk meningkatkan efisiensi pengelolaan data."
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80"
+      ]
+    },
+    {
+      "title": "Webinar Coretax DJP",
+      "date": "Maret 2025",
+      "points": [
+        "Mempelajari sistem Coretax DJP dan fitur-fitur utama yang mendukung administrasi perpajakan secara digital.",
+        "Memahami alur penggunaan Coretax DJP dalam pengelolaan data dan layanan perpajakan."
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=500&q=80",
+        "https://images.unsplash.com/photo-1450101499163-c8848c66cb85?w=500&q=80"
+      ]
+    }
+  ],
+  "contact": {
+    "email": "vinolahasibuan28@gmail.com",
+    "whatsapp": "0895 0653 4108",
+    "linkedin": "Vinola Refalina Hasibuan",
+    "linkedinUrl": "https://www.linkedin.com/in/vinolarefalinahsb",
+    "location": "Pekanbaru, Riau, Indonesia"
+  }
+}

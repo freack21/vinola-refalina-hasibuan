@@ -1,53 +1,66 @@
-import { GraduationCap, BookOpen } from 'lucide-react';
+import { GraduationCap, BookOpen, MapPin } from 'lucide-react';
 
-const Education = () => {
+const Education = ({ data }) => {
+  if (!data) return null;
+
   return (
-    <section id="education" className="py-24 bg-brand-secondary">
+    <section id="education" className="py-24 bg-brand-background border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-primary mb-4">Education.</h2>
           <div className="w-16 h-1 bg-brand-accent mx-auto"></div>
         </div>
-        
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-xl relative overflow-hidden">
-          {/* Decorative watermark */}
-          <GraduationCap className="absolute -top-10 -right-10 w-64 h-64 text-brand-secondary opacity-50" strokeWidth={1} />
+
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-50 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-secondary/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-brand-secondary/80 transition-colors duration-500"></div>
           
-          <div className="relative z-10 flex flex-col md:flex-row gap-8 justify-between items-start">
-            <div className="flex gap-6 items-center">
-              <div className="hidden md:flex items-center justify-center bg-white p-2 rounded-full shadow-md w-24 h-24 flex-shrink-0">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png" alt="Logo UNRI" className="w-full h-full object-contain drop-shadow-sm" />
-              </div>
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="md:hidden bg-white p-1 rounded-full shadow-sm w-10 h-10 flex items-center justify-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png" alt="Logo UNRI" className="w-8 h-8 object-contain" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-brand-text">Universitas Riau</h3>
-                </div>
-                <p className="text-xl text-brand-primary font-medium mb-1">S1 Akuntansi</p>
-                <p className="text-brand-text-light">2022 - 2026</p>
-              </div>
+          <div className="flex flex-col md:flex-row gap-8 items-start relative z-10">
+            {/* University Logo */}
+            <div className="w-24 h-24 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center flex-shrink-0 mx-auto md:mx-0 p-3">
+              <img 
+                src={data.logo || "https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png"} 
+                alt="Logo Universitas Riau" 
+                className="w-full h-full object-contain"
+              />
             </div>
             
-            <div className="bg-brand-secondary px-6 py-4 rounded-xl border border-brand-accent/20 text-center min-w-[150px]">
-              <p className="text-sm font-medium text-brand-text-light uppercase tracking-widest mb-1">IPK</p>
-              <p className="text-3xl font-bold text-brand-primary">3.80<span className="text-lg text-brand-text-light font-normal">/4.00</span></p>
-            </div>
-          </div>
-          
-          <div className="relative z-10 mt-10 pt-8 border-t border-gray-100">
-            <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="text-brand-accent" size={20} />
-              <h4 className="text-lg font-semibold text-brand-text">Mata Kuliah Relevan:</h4>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {['Praktek Penyusunan Laporan Keuangan', 'Analisis Laporan Keuangan', 'Praktek Perpajakan', 'PPN'].map((course) => (
-                <span key={course} className="bg-brand-primary/5 text-brand-primary px-4 py-2 rounded-full text-sm font-medium border border-brand-primary/10">
-                  {course}
-                </span>
-              ))}
+            <div className="flex-grow text-center md:text-left">
+              <div className="inline-block px-4 py-1.5 bg-brand-secondary text-brand-text font-semibold text-sm rounded-full mb-4">
+                {data.period}
+              </div>
+              
+              <h3 className="text-3xl font-bold text-brand-primary mb-2">{data.institution}</h3>
+              <p className="text-xl text-brand-text font-medium mb-4 flex items-center justify-center md:justify-start gap-2">
+                <GraduationCap size={24} className="text-brand-accent" />
+                {data.degree}
+              </p>
+              
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-6">
+                <div className="flex items-center gap-2 bg-brand-secondary/50 px-4 py-2 rounded-lg text-brand-text">
+                  <span className="font-medium">IPK:</span>
+                  <span className="font-bold text-brand-primary text-lg">{data.gpa}</span>
+                  <span className="text-sm text-brand-text-light">/ {data.maxGpa}</span>
+                </div>
+                <div className="flex items-center gap-2 text-brand-text-light text-sm bg-gray-50 px-4 py-2 rounded-lg">
+                  <MapPin size={16} />
+                  Pekanbaru, Riau
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-gray-100">
+                <h4 className="text-lg font-semibold text-brand-text mb-4 flex items-center justify-center md:justify-start gap-2">
+                  <BookOpen size={20} className="text-brand-accent" />
+                  Mata Kuliah Utama
+                </h4>
+                <div className="flex flex-wrap justify-center md:justify-start gap-2 text-sm">
+                  {data.courses && data.courses.map((course, index) => (
+                    <span key={index} className="px-4 py-2 bg-brand-background border border-gray-100 rounded-full text-brand-text-light hover:border-brand-accent/50 hover:text-brand-text transition-colors">
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

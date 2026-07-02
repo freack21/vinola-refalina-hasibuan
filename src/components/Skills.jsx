@@ -1,34 +1,17 @@
 import { 
-  FileSpreadsheet, 
-  Calculator, 
-  FileText, 
-  LayoutTemplate,
-  MonitorCheck,
-  CheckSquare,
-  Clock,
-  Lightbulb,
-  Search,
-  Users,
-  MessageSquare
+  FileSpreadsheet, Calculator, FileText, LayoutTemplate,
+  MonitorCheck, CheckSquare, Clock, Lightbulb, Search,
+  Users, MessageSquare
 } from 'lucide-react';
 
-const Skills = () => {
-  const technicalSkills = [
-    { name: 'Microsoft Office', icon: <FileText size={20} className="text-brand-accent" /> },
-    { name: 'Fungsi Lanjutan Excel', icon: <FileSpreadsheet size={20} className="text-brand-accent" /> },
-    { name: 'Google Workspace', icon: <MonitorCheck size={20} className="text-brand-accent" /> },
-    { name: 'Accurate Software', icon: <Calculator size={20} className="text-brand-accent" /> },
-    { name: 'Sistem Coretax DJP', icon: <CheckSquare size={20} className="text-brand-accent" /> },
-    { name: 'Canva Design', icon: <LayoutTemplate size={20} className="text-brand-accent" /> }
-  ];
+const IconMap = {
+  FileSpreadsheet, Calculator, FileText, LayoutTemplate,
+  MonitorCheck, CheckSquare, Clock, Lightbulb, Search,
+  Users, MessageSquare
+};
 
-  const softSkills = [
-    { name: 'Manajemen Waktu', icon: <Clock size={20} className="text-brand-secondary" /> },
-    { name: 'Teliti & Analitis', icon: <Search size={20} className="text-brand-secondary" /> },
-    { name: 'Problem Solving', icon: <Lightbulb size={20} className="text-brand-secondary" /> },
-    { name: 'Kerjasama Tim', icon: <Users size={20} className="text-brand-secondary" /> },
-    { name: 'Komunikasi', icon: <MessageSquare size={20} className="text-brand-secondary" /> }
-  ];
+const Skills = ({ data }) => {
+  if (!data) return null;
 
   return (
     <section id="skills" className="py-24 bg-brand-secondary">
@@ -47,20 +30,22 @@ const Skills = () => {
               Technical Skills
             </h3>
             <div className="grid sm:grid-cols-2 gap-4">
-              {technicalSkills.map((skill, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:border-brand-accent/50 hover:shadow-sm transition-all group">
-                  <div className="bg-white p-2 rounded-lg shadow-sm group-hover:scale-110 transition-transform">
-                    {skill.icon}
+              {data.technical && data.technical.map((skill, index) => {
+                const Icon = IconMap[skill.iconName] || FileText;
+                return (
+                  <div key={index} className="flex items-center gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50/50 hover:bg-white hover:border-brand-accent/50 hover:shadow-sm transition-all group">
+                    <div className="bg-white p-2 rounded-lg shadow-sm group-hover:scale-110 transition-transform">
+                      <Icon size={20} className="text-brand-accent" />
+                    </div>
+                    <span className="font-medium text-brand-text text-sm">{skill.name}</span>
                   </div>
-                  <span className="font-medium text-brand-text text-sm">{skill.name}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           
           {/* Soft Skills */}
           <div className="bg-brand-primary text-white rounded-2xl p-8 md:p-10 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] relative overflow-hidden">
-            {/* Background elements */}
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-brand-accent/20 rounded-full blur-2xl"></div>
             
@@ -68,19 +53,21 @@ const Skills = () => {
               Soft Skills
             </h3>
             <div className="flex flex-col gap-4 relative z-10">
-              {softSkills.map((skill, index) => (
-                <div key={index} className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-white/10 transition-colors">
-                  <div className="bg-white/10 p-2 rounded-lg">
-                    {skill.icon}
+              {data.soft && data.soft.map((skill, index) => {
+                const Icon = IconMap[skill.iconName] || Clock;
+                return (
+                  <div key={index} className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-white/10 transition-colors">
+                    <div className="bg-white/10 p-2 rounded-lg">
+                      <Icon size={20} className="text-brand-secondary" />
+                    </div>
+                    <span className="font-medium text-gray-100">{skill.name}</span>
                   </div>
-                  <span className="font-medium text-gray-100">{skill.name}</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
   );

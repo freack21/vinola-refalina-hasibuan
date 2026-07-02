@@ -1,51 +1,62 @@
 import { ArrowRight, Download } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ data }) => {
+  if (!data) return null;
+
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-brand-secondary">
-      {/* Abstract Background Element */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-primary/5 rounded-bl-[100px] md:rounded-bl-[200px] -z-10"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col gap-6 fade-in">
-          <div className="inline-flex items-center gap-2 text-brand-accent font-semibold tracking-wider text-sm uppercase">
-            <span className="w-8 h-[2px] bg-brand-accent"></span>
-            Finance & Accounting Professional
+    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-secondary">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-accent/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="space-y-8 fade-in">
+          <div className="inline-block px-4 py-2 bg-brand-primary/10 rounded-full border border-brand-primary/20">
+            <p className="text-brand-primary font-medium tracking-wider text-sm uppercase">Portofolio Profesional</p>
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-brand-text">
-            Vinola <br />
-            <span className="text-brand-primary">Refalina Hasibuan</span>
+            {data.title1} <br />
+            <span className="text-brand-primary">{data.title2}</span>
           </h1>
           
           <p className="text-lg md:text-xl text-brand-text-light max-w-md font-light leading-relaxed">
-            Fresh Graduate Akuntansi dengan spesialisasi di bidang Keuangan dan Perpajakan. Berdedikasi untuk mengubah kompleksitas data menjadi kejelasan strategis.
+            {data.subtitle}
           </p>
           
-          <div className="flex flex-wrap gap-4 mt-4">
-            <a href="#contact" className="flex items-center gap-2 bg-brand-primary text-brand-secondary px-8 py-4 rounded font-medium hover:bg-brand-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-              Let's Connect <ArrowRight size={18} />
+          <div className="flex flex-wrap gap-4 pt-4">
+            <a href="#about" className="px-8 py-4 bg-brand-primary text-white rounded-full font-medium hover:bg-brand-accent transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-accent/30 flex items-center gap-2 group">
+              Kenali Lebih Lanjut
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="https://tinyurl.com/sertifikat-vinola" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white text-brand-text px-8 py-4 rounded font-medium border border-gray-200 hover:border-brand-accent hover:text-brand-accent transition-all shadow-sm">
-              View Certificates <Download size={18} />
+            
+            <a href="/cv.pdf" download className="px-8 py-4 bg-white text-brand-text rounded-full font-medium border border-gray-200 hover:border-brand-primary hover:text-brand-primary transition-all flex items-center gap-2">
+              <Download size={18} />
+              Unduh CV
             </a>
           </div>
         </div>
-        
-        <div className="relative fade-in" style={{ animationDelay: '0.2s' }}>
-          <div className="aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative">
-            <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
-              alt="Vinola Refalina Hasibuan" 
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-brand-primary/10 mix-blend-multiply"></div>
-          </div>
+
+        <div className="relative fade-in hidden md:block">
+          <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 to-transparent rounded-full transform scale-105 blur-lg"></div>
+          <img 
+            src={data.image || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"} 
+            alt="Vinola Profile" 
+            className="w-full max-w-md mx-auto relative z-10 rounded-3xl shadow-2xl object-cover aspect-[4/5] transform hover:scale-[1.02] transition-transform duration-500"
+          />
           
-          {/* Decorative Card */}
-          <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl hidden md:block">
-            <div className="text-3xl font-bold text-brand-primary mb-1">3.80</div>
-            <div className="text-sm font-medium text-brand-text-light uppercase tracking-wider">GPA (Cum Laude)</div>
+          {/* Floating Element */}
+          <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl z-20 animate-bounce" style={{ animationDuration: '3s' }}>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <span className="text-green-600 text-2xl">✨</span>
+              </div>
+              <div>
+                <p className="font-bold text-gray-800">Fresh Graduate</p>
+                <p className="text-sm text-gray-500">Siap Bekerja</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

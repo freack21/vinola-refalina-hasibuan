@@ -1,32 +1,7 @@
 import { Award, ImageIcon } from 'lucide-react';
 
-const Training = () => {
-  const trainings = [
-    {
-      title: 'Short Class My Skill',
-      date: 'April 2025',
-      points: [
-        'Menguasai dasar pengolahan data pada Microsoft Excel menggunakan fungsi HLOOKUP, VLOOKUP, dan INDEX-MATCH.',
-        'Mengolah dan menganalisis data dengan fungsi lookup untuk meningkatkan efisiensi pengelolaan data.'
-      ],
-      gallery: [
-        'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80',
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80'
-      ]
-    },
-    {
-      title: 'Webinar Coretax DJP',
-      date: 'Maret 2025',
-      points: [
-        'Mempelajari sistem Coretax DJP dan fitur-fitur utama yang mendukung administrasi perpajakan secara digital.',
-        'Memahami alur penggunaan Coretax DJP dalam pengelolaan data dan layanan perpajakan.'
-      ],
-      gallery: [
-        'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=500&q=80',
-        'https://images.unsplash.com/photo-1450101499163-c8848c66cb85?w=500&q=80'
-      ]
-    }
-  ];
+const Training = ({ data }) => {
+  if (!data) return null;
 
   return (
     <section id="training" className="py-24 bg-white border-t border-gray-100">
@@ -40,7 +15,7 @@ const Training = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          {trainings.map((training, index) => (
+          {data.map((training, index) => (
             <div key={index} className="bg-brand-background rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] border border-gray-50 flex flex-col h-full">
               <div className="flex justify-between items-start mb-6 border-b border-gray-100 pb-4">
                 <div>
@@ -70,7 +45,7 @@ const Training = () => {
                     <ImageIcon size={16} className="text-brand-accent" />
                     Sertifikat / Dokumentasi
                   </div>
-                  <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
+                  <div className="flex gap-3 overflow-x-auto pb-2 snap-x custom-scrollbar">
                     {training.gallery.map((imgUrl, i) => (
                       <div key={i} className="relative group overflow-hidden rounded-lg min-w-[140px] h-28 border border-gray-200 snap-center flex-shrink-0 cursor-zoom-in">
                         <img src={imgUrl} alt={`Dokumentasi ${training.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
