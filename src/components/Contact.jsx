@@ -37,7 +37,7 @@ const Contact = () => {
               <Globe className="text-brand-accent" size={28} />
             </div>
             <h3 className="text-xl font-semibold mb-2">LinkedIn</h3>
-            <p className="text-gray-300 font-light text-sm">Vinola Refalina H.</p>
+            <p className="text-gray-300 font-light text-sm">Vinola Refalina Hasibuan</p>
           </a>
           
         </div>

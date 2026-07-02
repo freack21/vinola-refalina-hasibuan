@@ -15,7 +15,7 @@ const Hero = () => {
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-brand-text">
             Vinola <br />
-            <span className="text-brand-primary">Refalina H.</span>
+            <span className="text-brand-primary">Refalina Hasibuan</span>
           </h1>
           
           <p className="text-lg md:text-xl text-brand-text-light max-w-md font-light leading-relaxed">
