@@ -34,7 +34,7 @@ const Experience = ({ data }) => {
                 </div>
                 
                 {/* Content */}
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 md:p-8 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
+                <div className="min-w-0 w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 md:p-8 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-lg hover:border-brand-accent/30 transition-all duration-300">
                   <div className="flex flex-col mb-4 gap-2">
                     <span className="inline-block px-3 py-1 bg-brand-secondary text-brand-text text-xs font-semibold uppercase tracking-wider rounded-full w-fit">
                       {exp.type}
@@ -62,12 +62,12 @@ const Experience = ({ data }) => {
                         <ImageIcon size={16} className="text-brand-accent" />
                         Galeri
                       </div>
-                      <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory">
+                      <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory w-full custom-scrollbar">
                         {exp.gallery.map((imgUrl, i) => (
                           <div 
                             key={i} 
                             onClick={() => setModalImage(imgUrl)}
-                            className="relative group/img overflow-hidden rounded-xl min-w-[160px] md:min-w-[180px] h-32 md:h-36 border border-gray-100 shadow-sm snap-center flex-shrink-0 cursor-zoom-in"
+                            className="relative group/img overflow-hidden rounded-xl w-40 md:w-56 aspect-video border border-gray-100 shadow-sm snap-center shrink-0 cursor-zoom-in"
                           >
                             <img src={imgUrl} alt={`Dokumentasi ${exp.company}`} className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110" />
                             <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover/img:opacity-100 transition-opacity pointer-events-none"></div>

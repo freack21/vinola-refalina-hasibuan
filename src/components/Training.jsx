@@ -20,7 +20,7 @@ const Training = ({ data }) => {
         
         <div className="grid md:grid-cols-2 gap-8">
           {data.map((training, index) => (
-            <div key={index} className="bg-brand-background rounded-2xl p-6 md:p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] border border-gray-50 flex flex-col h-full">
+            <div key={index} className="min-w-0 bg-brand-background rounded-2xl p-5 md:p-8 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] border border-gray-50 flex flex-col h-full">
               <div className="flex justify-between items-start mb-6 border-b border-gray-100 pb-4">
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold text-brand-primary mb-2">{training.title}</h3>
@@ -49,15 +49,15 @@ const Training = ({ data }) => {
                     <ImageIcon size={16} className="text-brand-accent" />
                     Sertifikat / Dokumentasi
                   </div>
-                  <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory">
+                  <div className="flex gap-3 md:gap-4 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory w-full custom-scrollbar">
                     {training.gallery.map((imgUrl, i) => (
                       <div 
                         key={i} 
                         onClick={() => setModalImage(imgUrl)}
-                        className="relative group overflow-hidden rounded-xl min-w-[180px] md:min-w-[200px] h-40 md:h-44 border border-gray-100 shadow-sm snap-center flex-shrink-0 cursor-zoom-in"
+                        className="relative group overflow-hidden rounded-xl w-40 md:w-56 aspect-[4/3] border border-gray-100 shadow-sm snap-center shrink-0 cursor-zoom-in flex items-center justify-center bg-gray-50"
                       >
-                        <img src={imgUrl} alt={`Dokumentasi ${training.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                        <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                        <img src={imgUrl} alt={`Dokumentasi ${training.title}`} className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
+                        <div className="absolute inset-0 bg-brand-primary/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                       </div>
                     ))}
                   </div>
