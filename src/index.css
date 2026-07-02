@@ -48,17 +48,16 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--brand-background);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--brand-primary);
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
