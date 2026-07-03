@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vinola-refandi.my.id/sitemap.xml
+Sitemap: https://vinola.refandi.my.id/sitemap.xml
