@@ -12,6 +12,8 @@ const About = ({ data }) => {
             alt="Accounting & Finance Workspace" 
             loading="lazy"
             decoding="async"
+            width="500"
+            height="400"
             className="w-full h-auto rounded-xl shadow-lg object-cover"
           />
         </div>

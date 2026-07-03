@@ -25,6 +25,7 @@ const ImageModal = ({ isOpen, imageUrl, onClose }) => {
     >
       <button 
         onClick={onClose}
+        aria-label="Close Modal"
         className="absolute top-4 right-4 md:top-8 md:right-8 text-white p-2 hover:bg-white/20 rounded-full transition-colors z-10"
       >
         <X size={32} />

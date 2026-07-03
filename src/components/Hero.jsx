@@ -41,6 +41,8 @@ const Hero = ({ data }) => {
             alt="Vinola Profile" 
             fetchPriority="high"
             decoding="async"
+            width="400"
+            height="500"
             className="w-full max-w-md mx-auto relative z-10 rounded-3xl shadow-2xl object-cover aspect-[4/5] transform hover:scale-[1.02] transition-transform duration-500"
           />
           

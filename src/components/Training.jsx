@@ -56,7 +56,7 @@ const Training = ({ data }) => {
                         onClick={() => setModalImage(imgUrl)}
                         className="relative group overflow-hidden rounded-xl w-40 md:w-56 aspect-[4/3] border border-gray-100 shadow-sm snap-center shrink-0 cursor-zoom-in flex items-center justify-center bg-gray-50"
                       >
-                        <img src={imgUrl} alt={`Dokumentasi ${training.title}`} className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
+                        <img src={imgUrl} alt={`Dokumentasi ${training.title}`} loading="lazy" decoding="async" width="224" height="168" className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110" />
                         <div className="absolute inset-0 bg-brand-primary/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                       </div>
                     ))}

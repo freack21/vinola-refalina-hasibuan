@@ -23,6 +23,8 @@ const Education = ({ data }) => {
                 alt="Logo Universitas Riau" 
                 loading="lazy"
                 decoding="async"
+                width="72"
+                height="72"
                 className="w-full h-full object-contain"
               />
             </div>
