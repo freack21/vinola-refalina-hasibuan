@@ -39,6 +39,8 @@ const Hero = ({ data }) => {
           <img 
             src={data.image || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"} 
             alt="Vinola Profile" 
+            fetchPriority="high"
+            decoding="async"
             className="w-full max-w-md mx-auto relative z-10 rounded-3xl shadow-2xl object-cover aspect-[4/5] transform hover:scale-[1.02] transition-transform duration-500"
           />
           

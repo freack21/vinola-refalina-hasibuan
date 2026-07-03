@@ -10,6 +10,8 @@ const About = ({ data }) => {
           <img 
             src={data.image || "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop"} 
             alt="Accounting & Finance Workspace" 
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto rounded-xl shadow-lg object-cover"
           />
         </div>

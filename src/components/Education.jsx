@@ -21,6 +21,8 @@ const Education = ({ data }) => {
               <img 
                 src={data.logo || "https://upload.wikimedia.org/wikipedia/commons/5/5a/Logo_Universitas_Riau.png"} 
                 alt="Logo Universitas Riau" 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain"
               />
             </div>

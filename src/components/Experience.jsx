@@ -69,7 +69,7 @@ const Experience = ({ data }) => {
                             onClick={() => setModalImage(imgUrl)}
                             className="relative group/img overflow-hidden rounded-xl w-40 md:w-56 aspect-video border border-gray-100 shadow-sm snap-center shrink-0 cursor-zoom-in"
                           >
-                            <img src={imgUrl} alt={`Dokumentasi ${exp.company}`} className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110" />
+                            <img src={imgUrl} alt={`Dokumentasi ${exp.company}`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-110" />
                             <div className="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover/img:opacity-100 transition-opacity pointer-events-none"></div>
                           </div>
                         ))}

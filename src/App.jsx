@@ -1,16 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DataProvider, useData } from './context/DataContext';
 
+import React, { Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Education from './components/Education';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Training from './components/Training';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomScrollbar from './components/CustomScrollbar';
+
+const About = React.lazy(() => import('./components/About'));
+const Education = React.lazy(() => import('./components/Education'));
+const Experience = React.lazy(() => import('./components/Experience'));
+const Skills = React.lazy(() => import('./components/Skills'));
+const Training = React.lazy(() => import('./components/Training'));
+const Contact = React.lazy(() => import('./components/Contact'));
 
 import AdminLayout from './pages/AdminLayout';
 import AdminDashboard from './pages/AdminDashboard';
@@ -48,12 +50,14 @@ const Portfolio = () => {
       <Navbar />
       <main>
         <Hero data={data.hero} />
-        <About data={data.about} />
-        <Education data={data.education} />
-        <Experience data={data.experience} />
-        <Skills data={data.skills} />
-        <Training data={data.training} />
-        <Contact data={data.contact} />
+        <Suspense fallback={<div className="py-24 text-center text-brand-text-light">Loading sections...</div>}>
+          <About data={data.about} />
+          <Education data={data.education} />
+          <Experience data={data.experience} />
+          <Skills data={data.skills} />
+          <Training data={data.training} />
+          <Contact data={data.contact} />
+        </Suspense>
       </main>
       <Footer />
       <CustomScrollbar />
