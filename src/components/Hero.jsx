@@ -27,7 +27,7 @@ const Hero = ({ data }) => {
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             
-            <a href="/cv.pdf" download className="px-8 py-4 bg-white text-brand-text rounded-full font-medium border border-gray-200 hover:border-brand-primary hover:text-brand-primary transition-all flex items-center gap-2">
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-brand-text rounded-full font-medium border border-gray-200 hover:border-brand-primary hover:text-brand-primary transition-all flex items-center gap-2">
               <Download size={18} />
               Unduh CV
             </a>
