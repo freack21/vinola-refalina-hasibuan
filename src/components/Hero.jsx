@@ -47,7 +47,7 @@ const Hero = ({ data }) => {
           />
           
           {/* Floating Element */}
-          <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl z-20 animate-bounce" style={{ animationDuration: '3s' }}>
+          {/* <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl z-20 animate-bounce" style={{ animationDuration: '3s' }}>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <span className="text-green-600 text-2xl">✨</span>
@@ -57,7 +57,7 @@ const Hero = ({ data }) => {
                 <p className="text-sm text-gray-500">Siap Bekerja</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
